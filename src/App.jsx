@@ -1,15 +1,12 @@
-import { useState } from 'react'
 import React from 'react';
-import AITester from './components/AITester'
-import ScoreTester from './components/scoreTester';
+import { GameProvider } from './components/GameContext';
+import Game from './components/Game';
 
 function App() {
     return (
-        <div className="App">
-            <h1>AI Message Tester</h1>
-            <AITester />
-            <ScoreTester />
-        </div>
+        <GameProvider>
+            <Game />
+        </GameProvider>
     );
 }
 
