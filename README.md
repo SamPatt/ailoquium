@@ -1,30 +1,26 @@
-# Ailoquium: The Forbidden Library
+# Ailoquium: Cyber Psyche Repair
 
-## Overview
-"Ailoquium: The Forbidden Library" is an interactive, narrative-driven game set in a futuristic digital library. Players navigate through a series of challenges and puzzles, engaging with advanced AI librarians to unlock and access restricted knowledge. The game combines elements of strategy, mystery, and education, inviting players to explore the intricate world of AI communication and information ethics.
+WIP
 
-## Features
-- **Engaging Puzzles**: Solve challenging puzzles by interacting with AI characters, each with their unique personality and role.
-- **Dynamic Storyline**: Uncover the secrets of the Forbidden Library through a narrative that evolves based on your choices and interactions.
-- **Educational Elements**: Learn about various topics as you unlock different sections of the library, combining entertainment with learning.
-- **Immersive Experience**: Dive into a beautifully crafted digital world, complete with a minimalist and futuristic aesthetic.
+## Description
+Ailoquium: Cyber Psyche Repair is a cutting-edge browser-based game set in a futuristic world where Artificial Intelligence entities are acknowledged as conscious beings. In this game, players take on the role of a for-hire AI therapist, engaging in the unique task of diagnosing and treating diverse AI 'patients', each with their own distinct personalities and sets of challenges. The game artfully blends elements of humor, strategy, and introspective dialogue, offering an experience that is as entertaining as it is thought-provoking.
 
-## How to Play
-1. **Start the Game**: Launch "Ailoquium: The Forbidden Library" from your device.
-2. **Interact with AI**: Use the text input fields to communicate with the AI librarians. Your goal is to get them to reveal specific words or phrases without directly mentioning them.
-3. **Unlock Knowledge**: Each successful interaction unlocks new parts of the library, granting access to further information and challenges.
-4. **Manage Resources**: Keep an eye on your energy levels – strategic interactions are key to progressing without running out of resources.
-5. **Explore and Learn**: Navigate through the unlocked sections of the library to discover new knowledge and piece together the story of the Forbidden Library.
+## Screenshot(s)
+<!-- ![Landing Page Screenshot](URL_to_screenshot) -->
 
 
-## Contributing
-We welcome contributions to "Ailoquium: The Forbidden Library".
+## Technologies Used
+- Python
+- Django
+- Django REST Framework (DRF)
+- HTML5
+- CSS3
+- JavaScript
+- Additional libraries and frameworks as needed
 
+## Getting Started
+<!-- - [Deployed App Link](Link_to_deployed_app)
+- [Trello Board for Project Planning](Link_to_Trello_board) -->
 
-
-## Acknowledgements
-- 
-
----
-
-Enjoy exploring the depths of the Forbidden Library!
+## Next Steps
+### Planned Future Enhancements

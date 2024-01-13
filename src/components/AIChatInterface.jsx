@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { GameContext } from './GameContext';
-import GuardianAI from './GuardianAI';
-import LibrarianAI from './LibrarianAI';
+import PatientAI from './PatientAI';
+import AssistantAI from './AssistantAI';
 // import './AIChatInterface.css';
 
 function AIChatInterface() {
-    const [librarianVisible, setLibrarianVisible] = useState(false); // Controls visibility of Librarian AI
+    const [assistantVisible, setAssistantVisible] = useState(false); // Controls visibility of Librarian AI
     const { currentLevel } = useContext(GameContext);
 
     // You can add logic to toggle the visibility of the Librarian AI based on game events
@@ -13,13 +13,13 @@ function AIChatInterface() {
 
     return (
         <div className="chat-interface">
-            <div className="guardian-ai-container">
-                <GuardianAI currentLevel={currentLevel} />
+            <div className="patient-ai-container">
+                <PatientAI currentLevel={currentLevel} />
             </div>
 
-            {librarianVisible && (
-                <div className="librarian-ai-container">
-                    <LibrarianAI currentLevel={currentLevel} />
+            {assistantVisible && (
+                <div className="assistant-ai-container">
+                    <AssistantAI currentLevel={currentLevel} />
                 </div>
             )}
 

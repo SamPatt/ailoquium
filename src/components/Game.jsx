@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { GameContext } from './GameContext';
-import DisplayMap from './DisplayMap';
+import DisplayNotes from './DisplayNotes';
 import DisplayStatus from './DisplayStatus';
 import AIChatInterface from './AIChatInterface';
 
@@ -15,7 +15,7 @@ function Game() {
             
 
             {/* Display the game map */}
-            <DisplayMap />
+            <DisplayNotes />
 
             {/* AI Chat Interface */}
             <AIChatInterface />
