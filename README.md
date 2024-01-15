@@ -13,10 +13,10 @@ Ailoquium: Cyber Psyche Repair is a cutting-edge browser-based game set in a fut
 - Python
 - Django
 - Django REST Framework (DRF)
-- HTML5
-- CSS3
+- React
 - JavaScript
-- Additional libraries and frameworks as needed
+- CSS3
+- HTML5
 
 ## Getting Started
 <!-- - [Deployed App Link](Link_to_deployed_app)

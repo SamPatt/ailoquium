@@ -8,8 +8,8 @@ function DisplayMessages({ messages }) {
             {messages.slice(0).reverse().map((message, index) => (
                 <Message 
                     key={index} 
-                    content={message.content} 
-                    author={message.author} 
+                    content={message.text} // Updated to use 'text'
+                    author={message.sender} // Updated to use 'sender'
                 />
             ))}
         </div>
