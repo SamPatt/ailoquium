@@ -3,6 +3,7 @@ export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage)
   try {
       const response = await fetch("http://localhost:8000/api/ai/", {
         method: "POST",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
         },
