@@ -5,7 +5,7 @@ import DisplayStatus from './DisplayStatus';
 import AIChatInterface from './AIChatInterface';
 
 function Game() {
-    const { currentLevel, energyUsed, energyAtStartOfLevel } = useContext(GameContext);
+
 
     // Additional game logic or functions can be added here
 

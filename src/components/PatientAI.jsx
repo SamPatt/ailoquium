@@ -7,9 +7,11 @@ import { patients } from './PatientList.js';
 
 function PatientAI() {
     const [messages, setMessages] = useState([]);
-    const [isFirstMessage, setIsFirstMessage] = useState(true);
-    const { numOfAITreated } = useContext(GameContext);
 
+    const { numOfAITreated } = useContext(GameContext);
+    const { nextPatient } = useContext(GameContext);
+    const { isFirstMessage } = useContext(GameContext);
+    const { setIsFirstMessage } = useContext(GameContext);
     let secretPhrase = patients[numOfAITreated].secretPhrase;
     let patientBackground = patients[numOfAITreated].backstory;
     let patientReport = patients[numOfAITreated].humanReport
@@ -22,7 +24,7 @@ function PatientAI() {
     const handleUserInput = async (userMessage) => {
         setMessages(messages => [...messages, { text: userMessage, sender: "User" }]);
         let fullMessage = isFirstMessage ? `Background: ${patientBackground}. Report about patient from employer: ${patientReport}. Prompt: ${patientPrompt}. Patient: ${patients[numOfAITreated].dialogues.introduction} Doctor to patient: ${userMessage}. Patient's response:` : `Doctor to patient: ${userMessage}. Patient's response: `;
-        const aiResponse = await sendMessageToAI(fullMessage, secretPhrase, isFirstMessage);
+        const aiResponse = await sendMessageToAI(fullMessage, secretPhrase, isFirstMessage, "patient", nextPatient);
         setMessages(messages => [...messages, { text: aiResponse, sender: "PatientAI" }]);
         if (isFirstMessage) {
             setIsFirstMessage(false);

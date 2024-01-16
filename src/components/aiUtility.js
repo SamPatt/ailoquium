@@ -1,4 +1,4 @@
-export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage){
+export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage, role, nextPatient){
   
   try {
       const response = await fetch("http://localhost:8000/api/ai/", {
@@ -10,7 +10,8 @@ export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage)
         body: JSON.stringify({
           message: userMessage,
           secret_phrase: secretPhrase,
-          is_first_message: isFirstMessage
+          is_first_message: isFirstMessage,
+          role: role
         }),
       });
   
@@ -20,6 +21,14 @@ export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage)
   
       const data = await response.json();
       console.log(data);
+
+      if (data.role === 'patient' && data.success){
+        console.log('success')
+        nextPatient()
+      } else {
+        console.log('nope')
+      }
+
       return(data.response)
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);

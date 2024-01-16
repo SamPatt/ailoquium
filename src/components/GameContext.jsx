@@ -6,6 +6,8 @@ export const GameProvider = ({ children }) => {
     const [numOfAITreated, setNumOfAITreated] = useState(0);
     const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0); // Example initial money
     const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(280);
+    const [isFirstMessage, setIsFirstMessage] = useState(true);
+    const [isFirstNurseMessage, setIsFirstNurseMessage] = useState(true);
     const [gameOver, setGameOver] = useState(false);
     const [timer, setTimer] = useState(0);
 
@@ -29,6 +31,7 @@ export const GameProvider = ({ children }) => {
     // Reset the timer for each new AI treated
     const nextPatient = () => {
         setTimer(0)
+        setIsFirstMessage(true)
         setNumOfAITreated(currentNum => currentNum + 1)
         setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob)
         setMoneyRemainingFromCurrentJob(300)
@@ -45,6 +48,10 @@ export const GameProvider = ({ children }) => {
         gameOver,
         timer,
         nextPatient,
+        isFirstMessage,
+        setIsFirstMessage,
+        isFirstNurseMessage,
+        setIsFirstNurseMessage,
     };
 
     if(gameOver){

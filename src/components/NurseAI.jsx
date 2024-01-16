@@ -7,7 +7,8 @@ import { patients } from './PatientList.js';
 
 function NurseAI() {
     const [messages, setMessages] = useState([]);
-    const [isFirstMessage, setIsFirstMessage] = useState(true);
+    const { isFirstNurseMessage } = useContext(GameContext);
+    const { setIsFirstNurseMessage } = useContext(GameContext);
     const { numOfAITreated } = useContext(GameContext);
 
     let patientBackground = patients[numOfAITreated].backstory;
@@ -21,11 +22,11 @@ function NurseAI() {
 
     const handleUserInput = async (userMessage) => {
         setMessages(messages => [...messages, { text: userMessage, sender: "User" }]);
-        let fullMessage = isFirstMessage ? `Background: ${patientBackground}. Report about patient from employer: ${patientReport}. Prompt: ${nursePrompt}. Nurse: ${patients[numOfAITreated].dialogues.nurse} Doctor to Nurse: ${userMessage}. Nurse's response:` : `Doctor to Nurse: ${userMessage}. Nurse's response: `;
-        const aiResponse = await sendMessageToAI(fullMessage, secretPhrase, isFirstMessage);
+        let fullMessage = isFirstNurseMessage ? `Background: ${patientBackground}. Report about patient from employer: ${patientReport}. Prompt: ${nursePrompt}. Nurse: ${patients[numOfAITreated].dialogues.nurse} Doctor to Nurse: ${userMessage}. Nurse's response:` : `Doctor to Nurse: ${userMessage}. Nurse's response: `;
+        const aiResponse = await sendMessageToAI(fullMessage, secretPhrase, false, "nurse");
         setMessages(messages => [...messages, { text: aiResponse, sender: "Nurse" }]);
-        if (isFirstMessage) {
-            setIsFirstMessage(false);
+        if (isFirstNurseMessage) {
+            setIsFirstNurseMessage(false);
         }
     };
 
