@@ -32,7 +32,7 @@ function PatientAI() {
     return (
         <div className="patient-ai">
             <h3>Patient AI</h3>
-            <DisplayMessages messages={messages} />
+            <DisplayMessages messages={messages} secretPhrase={secretPhrase} />
             <UserInput onSend={handleUserInput} />
         </div>
     );

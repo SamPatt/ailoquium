@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-    const [numOfAITreated, setNumOfAITreated] = useState(1);
+    const [numOfAITreated, setNumOfAITreated] = useState(0);
     const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0); // Example initial money
     const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(280);
     const [gameOver, setGameOver] = useState(false);
@@ -27,10 +27,12 @@ export const GameProvider = ({ children }) => {
     }, []);
 
     // Reset the timer for each new AI treated
-    const resetTimer = () => {
-        setTimer(0);
-        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
+    const nextPatient = () => {
+        setTimer(0)
+        setNumOfAITreated(currentNum => currentNum + 1)
+        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob)
         setMoneyRemainingFromCurrentJob(300)
+
     };
 
     const value = {
@@ -42,7 +44,7 @@ export const GameProvider = ({ children }) => {
         setMoneyRemainingFromCurrentJob,
         gameOver,
         timer,
-        resetTimer,
+        nextPatient,
     };
 
     if(gameOver){
