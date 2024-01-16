@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-    const [numOfAITreated, setNumOfAITreated] = useState(0);
+    const [numOfAITreated, setNumOfAITreated] = useState(1);
     const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0); // Example initial money
     const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(280);
     const [gameOver, setGameOver] = useState(false);

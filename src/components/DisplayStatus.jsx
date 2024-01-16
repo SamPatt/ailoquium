@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { GameContext } from './GameContext';
+import { patients } from './PatientList';
 // import './DisplayStatus.css';  // Assuming you have a corresponding CSS file for styling
 
 function DisplayStatus() {
@@ -20,6 +21,8 @@ function DisplayStatus() {
     return (
         <div className="status-container">
             <h3>Game Status</h3>
+
+            <p>Phrase for successful treatment: <b>{patients[numOfAITreated].secretPhrase}</b></p>
             <p>Number of AI Treated: {numOfAITreated}</p>
             <p>Money at Start of Level: {moneyAtStartOfLevel}</p>
             <p>Money Remaining: {moneyRemainingFromCurrentJob}</p>

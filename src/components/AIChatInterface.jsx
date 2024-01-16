@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { GameContext } from './GameContext';
 import PatientAI from './PatientAI';
-import AssistantAI from './AssistantAI';
+import NurseAI from './NurseAI';
 // import './AIChatInterface.css';
 
 function AIChatInterface() {
@@ -12,8 +12,8 @@ function AIChatInterface() {
             <div className="patient-ai-container">
                 <PatientAI currentLevel={currentLevel} />
             </div>
-            <div className="assistant-ai-container">
-                <AssistantAI currentLevel={currentLevel} />
+            <div className="nurse-ai-container">
+                <NurseAI currentLevel={currentLevel} />
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
-export async function sendMessageToAI(userMessage){
-    try {
+export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage){
+  
+  try {
       const response = await fetch("http://localhost:8000/api/ai/", {
         method: "POST",
         headers: {
@@ -7,7 +8,8 @@ export async function sendMessageToAI(userMessage){
         },
         body: JSON.stringify({
           message: userMessage,
-          example_flag: true, // or false, depending on your logic
+          secret_phrase: secretPhrase,
+          is_first_message: isFirstMessage
         }),
       });
   
