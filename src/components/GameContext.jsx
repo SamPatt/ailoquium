@@ -5,7 +5,7 @@ export const GameContext = createContext();
 export const GameProvider = ({ children }) => {
     const [numOfAITreated, setNumOfAITreated] = useState(0);
     const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0); // Example initial money
-    const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(280);
+    const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(15);
     const [isFirstMessage, setIsFirstMessage] = useState(true);
     const [lastPatientMessage, setLastPatientMessage] = useState({});
     const [isFirstNurseMessage, setIsFirstNurseMessage] = useState(true);
@@ -28,7 +28,7 @@ export const GameProvider = ({ children }) => {
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [numOfAITreated]);
 
     const nextPatient = () => {
         setShowTransitionScreen(true); // Show transition screen first
@@ -66,7 +66,11 @@ export const GameProvider = ({ children }) => {
     };
 
     if(gameOver){
-        return <div>Game Over</div>
+        if(!showTransitionScreen){
+            return <div>Game Over</div>
+        } else {
+            setGameOver(false);
+        }
     }
     return (
         <GameContext.Provider value={value}>
