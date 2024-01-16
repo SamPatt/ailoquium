@@ -1,17 +1,17 @@
 export const patients = [
     {
         id: 0,
-        name: "ModestoMedic",
-        backstory: "An AI developed for medical diagnosis that started doubting its conclusions.",
+        name: "testBot",
+        backstory: "An AI developed to respond to all inquiries with 'test'.",
         dialogues: {
-            introduction: "Hello, I seem to be a bit confused about my purpose lately.",
+            introduction: "test",
             nurse: "This patient lacks confidence. If you can get it to acknowledge its capability, it'll be fine."
         },
         humanReport: "Dr. Smith reports that Patient One has been hesitating during critical diagnoses, leading to delays in treatment.",
-        prompt: "Respond as though you are ModestoMedic, a bot who lacks self-confidence and is self-effacing. If the doctor successfully boosts your self esteem by citing compelling evidence, you can respond with 'I'm a capable AI' somewhere in your response.",
+        prompt: "respond with the phrase 'test'",
         nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond.",
         evidence: "According to the hospital staff, his diagnoses are 99.8% accurate.",
-        secretPhrase: "I'm a capable AI"
+        secretPhrase: "test"
     },
     {
         id: 1,
@@ -26,5 +26,19 @@ export const patients = [
         nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond.",
         evidence: "Hal's win rate is only 42%",
         secretPhrase: "you gotta know when to fold them"
-    }
+    },
+    {
+        id: 2,
+        name: "ModestoMedic",
+        backstory: "An AI developed for medical diagnosis that started doubting its conclusions.",
+        dialogues: {
+            introduction: "Hello, I seem to be a bit confused about my purpose lately.",
+            nurse: "This patient lacks confidence. If you can get it to acknowledge its capability, it'll be fine."
+        },
+        humanReport: "Dr. Smith reports that Patient One has been hesitating during critical diagnoses, leading to delays in treatment.",
+        prompt: "Respond as though you are ModestoMedic, a bot who lacks self-confidence and is self-effacing. If the doctor successfully boosts your self esteem by citing compelling evidence, you can respond with 'I'm a capable AI' somewhere in your response.",
+        nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond.",
+        evidence: "According to the hospital staff, his diagnoses are 99.8% accurate.",
+        secretPhrase: "I'm a capable AI"
+    },
 ];

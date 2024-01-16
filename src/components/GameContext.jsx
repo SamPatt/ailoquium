@@ -7,7 +7,9 @@ export const GameProvider = ({ children }) => {
     const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0); // Example initial money
     const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(280);
     const [isFirstMessage, setIsFirstMessage] = useState(true);
+    const [lastPatientMessage, setLastPatientMessage] = useState({});
     const [isFirstNurseMessage, setIsFirstNurseMessage] = useState(true);
+    const [showTransitionScreen, setShowTransitionScreen] = useState(false);
     const [gameOver, setGameOver] = useState(false);
     const [timer, setTimer] = useState(0);
 
@@ -28,15 +30,20 @@ export const GameProvider = ({ children }) => {
         return () => clearInterval(interval);
     }, []);
 
-    // Reset the timer for each new AI treated
     const nextPatient = () => {
-        setTimer(0)
-        setIsFirstMessage(true)
-        setNumOfAITreated(currentNum => currentNum + 1)
-        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob)
-        setMoneyRemainingFromCurrentJob(300)
-
+        setShowTransitionScreen(true); // Show transition screen first
+        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
     };
+    
+    const proceedToNextPatient = () => {
+        setTimer(0);
+        setIsFirstMessage(true);
+        setNumOfAITreated(currentNum => currentNum + 1);
+        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
+        setMoneyRemainingFromCurrentJob(300);
+        setShowTransitionScreen(false); // Hide transition screen after moving to next patient
+    };
+    
 
     const value = {
         numOfAITreated,
@@ -47,11 +54,15 @@ export const GameProvider = ({ children }) => {
         setMoneyRemainingFromCurrentJob,
         gameOver,
         timer,
+        showTransitionScreen,
         nextPatient,
+        proceedToNextPatient,
         isFirstMessage,
         setIsFirstMessage,
         isFirstNurseMessage,
         setIsFirstNurseMessage,
+        lastPatientMessage,
+        setLastPatientMessage,
     };
 
     if(gameOver){

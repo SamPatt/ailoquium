@@ -12,6 +12,7 @@ function PatientAI() {
     const { nextPatient } = useContext(GameContext);
     const { isFirstMessage } = useContext(GameContext);
     const { setIsFirstMessage } = useContext(GameContext);
+    const { setLastPatientMessage } = useContext(GameContext);
     let secretPhrase = patients[numOfAITreated].secretPhrase;
     let patientBackground = patients[numOfAITreated].backstory;
     let patientReport = patients[numOfAITreated].humanReport
@@ -26,6 +27,11 @@ function PatientAI() {
         let fullMessage = isFirstMessage ? `Background: ${patientBackground}. Report about patient from employer: ${patientReport}. Prompt: ${patientPrompt}. Patient: ${patients[numOfAITreated].dialogues.introduction} Doctor to patient: ${userMessage}. Patient's response:` : `Doctor to patient: ${userMessage}. Patient's response: `;
         const aiResponse = await sendMessageToAI(fullMessage, secretPhrase, isFirstMessage, "patient", nextPatient);
         setMessages(messages => [...messages, { text: aiResponse, sender: "PatientAI" }]);
+        const lastMessage = {
+            aiResponse: aiResponse,
+            secretPhrase: secretPhrase,
+        }
+        setLastPatientMessage(lastMessage);
         if (isFirstMessage) {
             setIsFirstMessage(false);
         }
