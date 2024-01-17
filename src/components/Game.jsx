@@ -4,13 +4,22 @@ import DisplayNotes from './DisplayNotes';
 import DisplayStatus from './DisplayStatus';
 import AIChatInterface from './AIChatInterface';
 import TransitionScreen from './TransitionScreen';
+import IntroScreen from './IntroScreen';
+import GameOverScreen from './GameOverScreen';
 
 function Game() {
-    const { showTransitionScreen } = useContext(GameContext);
+    const { gameOver, showTransitionScreen, showIntroScreen } = useContext(GameContext);
 
+    if (showIntroScreen) {
+        return <IntroScreen />;
+    }
+    if (gameOver) {
+        
+        return <GameOverScreen />;
+    }
     return (
         <div className="game-container">
-            <h1>Game Title</h1>
+            <h2>Ailoquium: Cyber Psyche Repair</h2>
             {showTransitionScreen ? (
                 <TransitionScreen />
             ) : (

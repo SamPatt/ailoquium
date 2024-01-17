@@ -33,7 +33,7 @@ function DisplayStatus() {
 
             {showWipeMemoryModal && (
                 <div className="modal">
-                    <p>Are you sure you want to wipe the AI's memory?</p>
+                    <p>Are you sure? This will prompt an ethical board review.</p>
                     <button onClick={handleWipeMemory}>Confirm</button>
                     <button onClick={() => setShowWipeMemoryModal(false)}>Cancel</button>
                 </div>
@@ -41,7 +41,7 @@ function DisplayStatus() {
 
             {showQuarantineModal && (
                 <div className="modal">
-                    <p>Are you sure you want to send the AI to quarantine?</p>
+                    <p>Are you sure? This is an extreme measure which will involve the legal system, prompt an ethical board review, and should only occur if the AI is a threat to humans.</p>
                     <button onClick={handleSendToQuarantine}>Confirm</button>
                     <button onClick={() => setShowQuarantineModal(false)}>Cancel</button>
                 </div>

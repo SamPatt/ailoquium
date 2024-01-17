@@ -3,20 +3,26 @@ import React, { createContext, useState, useEffect } from 'react';
 export const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
+    const [username, setUsername] = useState('');
     const [numOfAITreated, setNumOfAITreated] = useState(0);
-    const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0); // Example initial money
-    const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(15);
+    const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0);
+    const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(30);
     const [isFirstMessage, setIsFirstMessage] = useState(true);
     const [lastPatientMessage, setLastPatientMessage] = useState({});
     const [isFirstNurseMessage, setIsFirstNurseMessage] = useState(true);
     const [showTransitionScreen, setShowTransitionScreen] = useState(false);
+    const [showIntroScreen, setShowIntroScreen] = useState(true);
     const [gameOver, setGameOver] = useState(false);
     const [timer, setTimer] = useState(0);
+    const [totalTime, setTotalTime] = useState(0);
 
     // Timer functionality
+    
+
     useEffect(() => {
         const interval = setInterval(() => {
             // Decrease money over time and check for game over condition
+            setTimer(currentNum => currentNum + 1);
             setMoneyRemainingFromCurrentJob((prevMoney) => {
                 const updatedMoney = prevMoney - 1;
                 if (updatedMoney <= 0) {
@@ -30,7 +36,18 @@ export const GameProvider = ({ children }) => {
         return () => clearInterval(interval);
     }, [numOfAITreated]);
 
+    // useEffect(() => {
+    //     console.log(`Total Time Updated: ${totalTime}`);
+    // }, [totalTime]);
+    
+
+    const startGame = () => {
+        setShowIntroScreen(false);
+    };
+
     const nextPatient = () => {
+        setTotalTime(currentTime => currentTime + timer);
+        console.log(totalTime);
         setShowTransitionScreen(true); // Show transition screen first
         setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
     };
@@ -40,7 +57,7 @@ export const GameProvider = ({ children }) => {
         setIsFirstMessage(true);
         setNumOfAITreated(currentNum => currentNum + 1);
         setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
-        setMoneyRemainingFromCurrentJob(300);
+        setMoneyRemainingFromCurrentJob(30);
         setShowTransitionScreen(false); // Hide transition screen after moving to next patient
     };
     
@@ -63,14 +80,14 @@ export const GameProvider = ({ children }) => {
         setIsFirstNurseMessage,
         lastPatientMessage,
         setLastPatientMessage,
+        showIntroScreen,
+        startGame,
+        username,
+        setUsername,
     };
 
-    if(gameOver){
-        if(!showTransitionScreen){
-            return <div>Game Over</div>
-        } else {
-            setGameOver(false);
-        }
+    if(gameOver && showTransitionScreen){
+        setGameOver(false);
     }
     return (
         <GameContext.Provider value={value}>
