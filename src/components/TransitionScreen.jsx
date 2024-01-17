@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { GameContext } from './GameContext';
 import { patients } from './PatientList'
 import { addLevelScore } from './scoreUtility'
 import './TransitionScreen.css';
 
 const TransitionScreen = () => {
-    const { timer, moneyAtStartOfLevel, moneyRemainingFromCurrentJob, proceedToNextPatient, lastPatientMessage, numOfAITreated, username } = useContext(GameContext);
+    const { timer, moneyAtStartOfLevel, moneyRemainingFromCurrentJob, proceedToNextPatient, lastPatientMessage, numOfAITreated, username, totalTime, setTotalTime } = useContext(GameContext);
     const [staticMoneyRemaining, setStaticMoneyRemaining] = useState(moneyRemainingFromCurrentJob);
     const [staticTimer, setStaticTimer] = useState(timer);
     const [showNextPatientDetails, setShowNextPatientDetails] = useState(false);
@@ -29,7 +29,7 @@ const TransitionScreen = () => {
         setShowNextPatientDetails(true);
     };
 
-    const nextPatientDetails = patients[numOfAITreated + 1] || {}; // Fetch details of the next patient
+    const nextPatientDetails = patients[numOfAITreated + 1] || {};
 
     const highlightSecretPhrase = (text, phrase) => {
         if (!phrase) return text;
