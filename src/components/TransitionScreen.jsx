@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { GameContext } from './GameContext';
 import { patients } from './PatientList'
-import { addLevelScore } from './scoreUtility'
+import { addLevelScore } from '../utilities/scoreUtility'
 import './TransitionScreen.css';
 
 const TransitionScreen = () => {

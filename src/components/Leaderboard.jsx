@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { fetchScores, fetchTotalScores } from './scoreUtility';
+import { useState, useEffect, useContext } from 'react';
+import { GameContext } from './GameContext';
+import { fetchScores, fetchTotalScores } from '../utilities/scoreUtility';
 
 const Leaderboard = ({ username }) => {
     const [scores, setScores] = useState([]);
     const [totalScores, setTotalScores] = useState([]);
+    const { startOver } = useContext(GameContext); 
 
     useEffect(() => {
         const getScores = async () => {
@@ -19,6 +21,10 @@ const Leaderboard = ({ username }) => {
         getScores();
         getTotalScores();
     }, []);
+
+    const handleStartNewGame = () => {
+        startOver();
+    }
 
     return (
         <div>
@@ -36,6 +42,7 @@ const Leaderboard = ({ username }) => {
                     <li key={totalScore.id}>{totalScore.username} - Highest Level: {totalScore.highest_level}, Total Time: {totalScore.total_time}, Total Money: {totalScore.total_money}</li>
                 ))}
             </ul>
+            <button onClick={handleStartNewGame}>Start New Game</button>
         </div>
     );
 };

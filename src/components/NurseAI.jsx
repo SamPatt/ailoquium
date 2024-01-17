@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { GameContext } from './GameContext';
 import UserInput from './UserInput';
 import DisplayMessages from './DisplayMessages';
-import { sendMessageToAI } from './aiUtility.js';
+import { sendMessageToAI } from '../utilities/aiUtility.js';
 import { patients } from './PatientList.js';
 
 function NurseAI() {

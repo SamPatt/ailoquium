@@ -1,5 +1,4 @@
 export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage, role, nextPatient){
-  
   try {
       const response = await fetch("http://localhost:8000/api/ai/", {
         method: "POST",
@@ -23,10 +22,7 @@ export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage,
       console.log(data);
 
       if (data.role === 'patient' && data.success){
-        console.log('success')
         nextPatient()
-      } else {
-        console.log('nope')
       }
 
       return(data.response)

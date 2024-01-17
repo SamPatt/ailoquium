@@ -1,12 +1,11 @@
 import { useState, useContext } from 'react';
 import { GameContext } from './GameContext';
 import Leaderboard from './Leaderboard'; 
-import { addTotalScore } from './scoreUtility'
+import { addTotalScore } from '../utilities/scoreUtility'
 
 const GameOverScreen = () => {
     const [showLeaderboard, setShowLeaderboard] = useState(false);
     const { numOfAITreated, moneyAtStartOfLevel, username, totalTime } = useContext(GameContext);
-    console.log(username, numOfAITreated, totalTime, moneyAtStartOfLevel)
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle the submission logic (e.g., saving the score, fetching leaderboard)

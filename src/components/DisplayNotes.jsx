@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { patients } from './PatientList';
 import './DisplayNotes.css';
 import { GameContext } from './GameContext';
