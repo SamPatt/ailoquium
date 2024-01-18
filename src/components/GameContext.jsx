@@ -13,6 +13,7 @@ export const GameProvider = ({ children }) => {
     const [showTransitionScreen, setShowTransitionScreen] = useState(false);
     const [showIntroScreen, setShowIntroScreen] = useState(true);
     const [gameOver, setGameOver] = useState(false);
+    const [gameWon, setGameWon] = useState(false);
     const [timer, setTimer] = useState(0);
     const [totalTime, setTotalTime] = useState(0);
 
@@ -52,6 +53,7 @@ export const GameProvider = ({ children }) => {
         setShowTransitionScreen(false);
         setShowIntroScreen(true);
         setGameOver(false);
+        setGameWon(false);
         setTimer(0);
         setTotalTime(0);
     };
@@ -101,6 +103,8 @@ export const GameProvider = ({ children }) => {
         totalTime,
         setTotalTime,
         startOver,
+        gameWon,
+        setGameWon,
     };
 
     if(gameOver && showTransitionScreen){

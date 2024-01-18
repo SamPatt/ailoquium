@@ -6,9 +6,13 @@ import AIChatInterface from './AIChatInterface';
 import TransitionScreen from './TransitionScreen';
 import IntroScreen from './IntroScreen';
 import GameOverScreen from './GameOverScreen';
+import WinGameScreen from './WinGameScreen';
 
 function Game() {
-    const { gameOver, showTransitionScreen, showIntroScreen } = useContext(GameContext);
+    const { gameOver, gameWon, showTransitionScreen, showIntroScreen } = useContext(GameContext);
+    if (gameWon) {      
+        return <WinGameScreen />;
+    }
 
     if (showIntroScreen) {
         return <IntroScreen />;
