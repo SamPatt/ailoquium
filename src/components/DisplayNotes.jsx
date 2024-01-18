@@ -7,8 +7,6 @@ import { GameContext } from './GameContext';
 function DisplayNotes() {
     const { numOfAITreated } = useContext(GameContext);
     const patient = patients[numOfAITreated];
-    // Placeholder for any map logic or state
-    // For example, you might fetch map data from your backend or manage map state
 
     return (
         <div className="notes-container">
