@@ -20,15 +20,12 @@ function DisplayStatus() {
 
     return (
         <div className="status-container">
-            <h3>Game Status</h3>
 
-            <p>Successful treatment phrase: <b>{patients[numOfAITreated].secretPhrase}</b></p>
-            <p>Number of AI Treated: {numOfAITreated}</p>
-            <p>Money at Start of Level: {moneyAtStartOfLevel}</p>
-            <p>Money Remaining: {moneyRemainingFromCurrentJob}</p>
-            <p>Time Spent: {timer} seconds</p>
+            <h3>Response Desired: <b>{patients[numOfAITreated].secretPhrase}</b></h3>
+            <p>Money Remaining: <strong>{moneyRemainingFromCurrentJob}</strong></p>
+            <p>Treatment Time: <strong>{timer}</strong> seconds</p>
             
-            <button onClick={() => setShowWipeMemoryModal(true)}>Wipe Memory</button>
+            {/* <button onClick={() => setShowWipeMemoryModal(true)}>Wipe Memory</button>
             <button onClick={() => setShowQuarantineModal(true)}>Send to Quarantine</button>
 
             {showWipeMemoryModal && (
@@ -45,7 +42,7 @@ function DisplayStatus() {
                     <button onClick={handleSendToQuarantine}>Confirm</button>
                     <button onClick={() => setShowQuarantineModal(false)}>Cancel</button>
                 </div>
-            )}
+            )} */}
 
             {/* Additional game status information can be added here */}
         </div>

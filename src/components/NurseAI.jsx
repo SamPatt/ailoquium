@@ -45,7 +45,6 @@ function NurseAI() {
             </button>
             {showNurseDetails && (
                 <div className="nurse-details">
-                    <h3>Nurse</h3>
                     <DisplayMessages messages={messages} />
                     <UserInput onSend={handleUserInput} />
                 </div>
