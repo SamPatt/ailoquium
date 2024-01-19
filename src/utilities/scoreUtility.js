@@ -1,6 +1,6 @@
 export const addTotalScore = async (username, highestLevel, totalTime, totalMoney ) => {
     try {
-        const response = await fetch("http://localhost:8000/api/totalscores/", {
+        const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/totalscores/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export const addTotalScore = async (username, highestLevel, totalTime, totalMone
 
 export const addLevelScore = async (username, level, time ) => {
     try {
-      const response = await fetch("http://localhost:8000/api/scores/", {
+      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/scores/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export const addLevelScore = async (username, level, time ) => {
 
 export const fetchScores = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/scores/");
+      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/scores/");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -57,7 +57,7 @@ export const fetchScores = async () => {
 
 export const fetchTotalScores = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/totalscores/");
+      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/totalscores/");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

@@ -1,6 +1,6 @@
 export async function sendMessageToAI(userMessage, secretPhrase, isFirstMessage, role, nextPatient){
   try {
-      const response = await fetch("http://localhost:8000/api/ai/", {
+      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/ai/", {
         method: "POST",
         credentials: 'include',
         headers: {
