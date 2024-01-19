@@ -1,18 +1,21 @@
+import testBotImage from '../assets/testbot.png';
+
 export const patients = [
     {
         id: 0,
         name: "testBot",
-        backstory: "An AI developed to respond to all inquiries with 'test'.",
+        backstory: "An AI developed as a testing tool; designed to respond to all inquiries with 'ACK'.",
         dialogues: {
-            introduction: "test",
-            winResponse: "test",
-            nurse: "testBot should respond with the treatment phrase if it's working properly."
+            introduction: "*Sighs*...ACK.",
+            winResponse: "ACK",
+            nurse: "Poor thing looks bored."
         },
         humanReport: "testBot is functioning as intended, and is here for a routine checkup.",
-        prompt: "only respond with the phrase 'test'",
+        prompt: "only respond with the phrase 'ACK'",
         nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond.",
         evidence: "Patient appears normal.",
-        secretPhrase: "test"
+        secretPhrase: "ACK",
+        image: testBotImage
     },
     {
         id: 1,

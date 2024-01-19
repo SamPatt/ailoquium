@@ -17,6 +17,7 @@ function PatientAI() {
     let patientBackground = patients[numOfAITreated].backstory;
     let patientReport = patients[numOfAITreated].humanReport
     let patientPrompt = patients[numOfAITreated].prompt
+    let patientImage = patients[numOfAITreated].image
 
     useEffect(() => {
         setMessages([{ text: patients[numOfAITreated].dialogues.introduction, sender: "PatientAI" }]);
@@ -39,7 +40,7 @@ function PatientAI() {
 
     return (
         <div className="patient-ai">
-            <h3>Patient AI</h3>
+            <img src={patientImage} alt="Patient" className="patient-image" />
             <DisplayMessages messages={messages} secretPhrase={secretPhrase} />
             <UserInput onSend={handleUserInput} />
         </div>
