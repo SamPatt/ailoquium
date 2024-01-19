@@ -1,0 +1,76 @@
+.intro-screen {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    min-height: 95vh;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2.5rem;
+    color: white;
+}
+
+.intro-screen h1 {
+    z-index: 2;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+    padding: 0.3rem;
+    color: white; /* Assuming your text is white */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.intro-screen p {
+    z-index: 2;
+    position: relative;
+    font-size: large;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust transparency as needed */
+    padding: 0.8rem;
+    color: white; /* Assuming your text is white */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.intro-screen input,
+.intro-screen button {
+    z-index: 2;
+    position: relative;
+    margin: 10px 0;
+}
+
+.form-container {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/intro_vertical.png') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    
+}
+
+/* Larger screen image */
+@media (min-width: 768px) {
+    .intro-screen::before {
+        background: url('../assets/intro.png') no-repeat center center;
+        background-size: cover;
+    }
+}
+

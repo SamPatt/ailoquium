@@ -7,9 +7,11 @@ import TransitionScreen from './TransitionScreen';
 import IntroScreen from './IntroScreen';
 import GameOverScreen from './GameOverScreen';
 import WinGameScreen from './WinGameScreen';
+import './Game.css';
 
 function Game() {
     const { gameOver, gameWon, showTransitionScreen, showIntroScreen } = useContext(GameContext);
+
     if (gameWon) {      
         return <WinGameScreen />;
     }
@@ -17,20 +19,27 @@ function Game() {
     if (showIntroScreen) {
         return <IntroScreen />;
     }
+
     if (gameOver) {
-        
         return <GameOverScreen />;
     }
+
     return (
         <div className="game-container">
-            <h2>Ailoquium: Cyber Psyche Repair</h2>
             {showTransitionScreen ? (
                 <TransitionScreen />
             ) : (
                 <>
-                    <DisplayNotes />
-                    <AIChatInterface />
-                    <DisplayStatus />
+                    <h3>Ailoquium</h3>
+                    <div className="display-notes">
+                        <DisplayNotes />
+                    </div>
+                    <div className="ai-chat-interface">
+                        <AIChatInterface />
+                    </div>
+                    <div className="display-status">
+                        <DisplayStatus />
+                    </div>
                 </>
             )}
         </div>

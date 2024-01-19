@@ -22,7 +22,7 @@ function DisplayStatus() {
         <div className="status-container">
             <h3>Game Status</h3>
 
-            <p>Phrase for successful treatment: <b>{patients[numOfAITreated].secretPhrase}</b></p>
+            <p>Successful treatment phrase: <b>{patients[numOfAITreated].secretPhrase}</b></p>
             <p>Number of AI Treated: {numOfAITreated}</p>
             <p>Money at Start of Level: {moneyAtStartOfLevel}</p>
             <p>Money Remaining: {moneyRemainingFromCurrentJob}</p>

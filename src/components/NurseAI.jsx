@@ -4,9 +4,12 @@ import UserInput from './UserInput';
 import DisplayMessages from './DisplayMessages';
 import { sendMessageToAI } from '../utilities/aiUtility.js';
 import { patients } from './PatientList.js';
+import nurseIcon from '../assets/nurse.png';
+import './NurseAI.css';
 
 function NurseAI() {
     const [messages, setMessages] = useState([]);
+    const [showNurseDetails, setShowNurseDetails] = useState(false);
     const { isFirstNurseMessage } = useContext(GameContext);
     const { setIsFirstNurseMessage } = useContext(GameContext);
     const { numOfAITreated } = useContext(GameContext);
@@ -30,11 +33,23 @@ function NurseAI() {
         }
     };
 
+    const toggleNurseDetails = () => {
+        setShowNurseDetails((prevShowNurseDetails) => !prevShowNurseDetails);
+    };
+
     return (
-        <div className="nurse">
-            <h3>Nurse</h3>
-            <DisplayMessages messages={messages} />
-            <UserInput onSend={handleUserInput} />
+        <div className="nurse-container">
+            <button className="nurse-button" onClick={toggleNurseDetails}>
+                <img src={nurseIcon} alt="Nurse Icon" className="nurse-icon" />
+                Consult Nurse
+            </button>
+            {showNurseDetails && (
+                <div className="nurse-details">
+                    <h3>Nurse</h3>
+                    <DisplayMessages messages={messages} />
+                    <UserInput onSend={handleUserInput} />
+                </div>
+            )}
         </div>
     );
 }

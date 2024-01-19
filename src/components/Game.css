@@ -1,0 +1,20 @@
+/* Game.css or App.css */
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Aligns children vertically with space between */
+    min-height: 95vh; /* Ensures the container takes up at least the height of the viewport */
+}
+
+/* Ensure DisplayNotes and AIChatInterface take up only the necessary space */
+.display-notes,
+.ai-chat-interface {
+    flex-grow: 1; /* Allows these components to grow and fill available space */
+}
+
+/* DisplayStatus will always be pushed to the bottom */
+.display-status {
+    margin-top: auto; /* Pushes DisplayStatus to the bottom */
+}
