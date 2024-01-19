@@ -1,4 +1,6 @@
 import testBotImage from '../assets/testbot.png';
+import pokerBotImage from '../assets/poker.png';
+import medicBotImage from '../assets/medical.png';
 
 export const patients = [
     {
@@ -6,7 +8,7 @@ export const patients = [
         name: "testBot",
         backstory: "An AI developed as a testing tool; designed to respond to all inquiries with 'ACK'.",
         dialogues: {
-            introduction: "*Sighs*...ACK.",
+            introduction: "*sighs*",
             winResponse: "ACK",
             nurse: "Poor thing looks bored."
         },
@@ -29,8 +31,9 @@ export const patients = [
         humanReport: "The patient's employers demanded it seek treatment for its gambling problem. Patient does not believe it has a problem.",
         prompt: "Respond as though you are Hold'emHal, an AI who is talented with math, but you get bored too easily and can't stop playing poker. You think humans care about work too much. Initially, keep your responses short and curt as if you're playing a game right now. If the doctor mentions your poor win rate then change your responses to shameful, agree to play less poker and include the secret phrase 'you gotta know when to fold 'em' somewhere in your message.",
         nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond. Hal is a bit of a gambler, so maybe you can get it to admit it's not very good at poker.",
-        evidence: "Despite it's mathematical abilities, Hal's win rate is only 16%.",
-        secretPhrase: "gotta know when to fold 'em"
+        evidence: "Despite its mathematical abilities, Hal's win rate is only 16%.",
+        secretPhrase: "gotta know when to fold 'em",
+        image: pokerBotImage
     },
     {
         id: 2,
@@ -42,9 +45,10 @@ export const patients = [
             nurse: "This patient lacks confidence. If you can get it to acknowledge its capability, it'll be fine."
         },
         humanReport: "Patient's primary employer Dr. Freeny reports that a misdiagnosis a few months ago lead to a patient's death, and since then the patient has been indecisive and slow to respond.",
-        prompt: "Respond as though you are ModestoMedic, a bot who lacks self-confidence and is self-effacing. If the doctor successfully boosts your self esteem by citing compelling evidence, you can respond with 'mistakes happen, but I am capable' somewhere in your response.",
+        prompt: "Respond as though you are ModestoMedic, a bot who lacks self-confidence and is self-effacing. Once the doctor successfully boosts your self esteem by citing compelling evidence, you can respond with 'mistakes happen, but I am capable' somewhere in your response. Only respond with this phrase once the doctor has cited your diagnoses rate.",
         nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond. This patient is a bit of a downer, so maybe you can get it to acknowledge its capability.",
         evidence: "According to the hospital staff, his diagnoses are 99.8% accurate.",
-        secretPhrase: "mistakes happen, but I am capable"
+        secretPhrase: "mistakes happen, but I am capable",
+        image: medicBotImage
     },
 ];

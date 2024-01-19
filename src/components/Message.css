@@ -1,4 +1,37 @@
+.message {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+
+.user-message .message-content {
+    background-color: #007bff; /* User message color */
+    color: white; /* User message text color */
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 80%;
+}
+
+.ai-message .message-content {
+    background-color: #333; /* AI message color */
+    color: #ddd; /* AI message text color */
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 80%;
+    align-self: flex-start;
+}
+
 .highlight {
-    font-weight: bold;
-    color: red;
+    background-color: yellow;
+    color: black;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* Add some media queries for responsiveness */
+@media (max-width: 768px) {
+    .user-message .message-content,
+    .ai-message .message-content {
+        max-width: 70%;
+    }
 }

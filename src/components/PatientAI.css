@@ -1,0 +1,17 @@
+.patient-ai {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 85%;
+    height: auto;
+    border-radius: 10px;
+}

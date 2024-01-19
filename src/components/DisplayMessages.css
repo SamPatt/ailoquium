@@ -1,0 +1,10 @@
+.messages-container {
+    display: flex;
+    flex-direction: column-reverse; 
+    padding: 10px;
+    max-height: 300px; 
+    overflow-y: auto;
+    background-color: #121212;
+    border-radius: 10px;
+    margin: 10px 0;
+}

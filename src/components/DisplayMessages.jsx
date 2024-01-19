@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from './Message'; 
-// import './DisplayMessages.css';
+import './DisplayMessages.css';
 
 function DisplayMessages({ messages, secretPhrase }) {
     return (

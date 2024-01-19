@@ -9,12 +9,55 @@
     }
 }
 
+.transition-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
 .fadeInScaleUp {
     animation: fadeInScaleUp 1s ease forwards;
+    font-size: larger;
 }
 
 .secretPhrase {
     color: #4CAF50; 
     font-weight: bold;
     animation: fadeInScaleUp 3s ease forwards;
+}
+
+.patient-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #344557;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ecf0f1;
+}
+
+.patient-detail-item {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #34495e;
+}
+
+.patient-detail-item:last-child {
+    border-bottom: none;
+}
+
+.patient-detail-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.patient-detail-content {
+    font-size: 0.9rem;
+    font-style: italic;
 }

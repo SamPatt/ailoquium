@@ -25,7 +25,7 @@ function NurseAI() {
 
     const handleUserInput = async (userMessage) => {
         setMessages(messages => [...messages, { text: userMessage, sender: "User" }]);
-        let fullMessage = isFirstNurseMessage ? `Background: ${patientBackground}. Report about patient from employer: ${patientReport}. Prompt: ${nursePrompt}. Nurse: ${patients[numOfAITreated].dialogues.nurse} Doctor to Nurse: ${userMessage}. Nurse's response:` : `Doctor to Nurse: ${userMessage}. Nurse's response: `;
+        let fullMessage = isFirstNurseMessage ? `Background: ${patientBackground}. Report about patient from employer: ${patientReport}. Prompt: ${nursePrompt}. Nurse: ${patients[numOfAITreated].dialogues.nurse} Doctor to Nurse: ${userMessage}. Respond as Nurse:` : `Doctor to Nurse: ${userMessage}. Respond as Nurse: `;
         const aiResponse = await sendMessageToAI(fullMessage, secretPhrase, false, "nurse");
         setMessages(messages => [...messages, { text: aiResponse, sender: "Nurse" }]);
         if (isFirstNurseMessage) {

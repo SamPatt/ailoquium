@@ -4,6 +4,7 @@ import UserInput from './UserInput';
 import DisplayMessages from './DisplayMessages';
 import { sendMessageToAI } from '../utilities/aiUtility.js';
 import { patients } from './PatientList.js';
+import './PatientAI.css';
 
 function PatientAI() {
     const [messages, setMessages] = useState([]);
