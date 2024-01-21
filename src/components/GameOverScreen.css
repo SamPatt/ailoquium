@@ -1,0 +1,41 @@
+.game-over-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #ffffff;
+    background-color: #121212; /* Dark background */
+    font-family: 'Arial', sans-serif;
+}
+
+.game-over-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.game-over-container p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.game-over-container form {
+    margin-top: 1.5rem;
+}
+
+.game-over-container button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007bff; /* Button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-over-container button:hover {
+    background-color: #0056b3; /* Button hover state */
+}
+
+/* If you have additional elements like input fields, add styles for them here */

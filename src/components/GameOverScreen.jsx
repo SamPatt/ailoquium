@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { GameContext } from './GameContext';
 import Leaderboard from './Leaderboard'; 
 import { addTotalScore } from '../utilities/scoreUtility'
+import './GameOverScreen.css';
 
 const GameOverScreen = () => {
     const [showLeaderboard, setShowLeaderboard] = useState(false);
@@ -18,7 +19,7 @@ const GameOverScreen = () => {
     }
 
     return (
-        <div>
+        <div className="game-over-container">
             <h1>Game Over</h1>
             <p>Dr. {username}, You treated {numOfAITreated + 1} patients.</p>
             <p>Total Money Earned: {moneyAtStartOfLevel}</p>

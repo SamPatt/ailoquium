@@ -17,13 +17,19 @@ function DisplayStatus() {
         // Implement the logic for sending to quarantine
         setShowQuarantineModal(false);
     };
+    
+    const formatTime = (timeInSeconds) => {
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = timeInSeconds % 60;
+        return `${minutes}m ${seconds}s`;
+    };
 
     return (
         <div className="status-container">
 
             <h3>Response Desired: <b>{patients[numOfAITreated].secretPhrase}</b></h3>
             <p>Money Remaining: <strong>{moneyRemainingFromCurrentJob}</strong></p>
-            <p>Treatment Time: <strong>{timer}</strong> seconds</p>
+            <p>Treatment Time: <strong>{formatTime(timer)}</strong></p>
             
             {/* <button onClick={() => setShowWipeMemoryModal(true)}>Wipe Memory</button>
             <button onClick={() => setShowQuarantineModal(true)}>Send to Quarantine</button>
