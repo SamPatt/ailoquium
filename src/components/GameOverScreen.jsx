@@ -14,6 +14,12 @@ const GameOverScreen = () => {
         addTotalScore(username, numOfAITreated, moneyAtStartOfLevel, totalTime);
     };
 
+    const formatTime = (timeInSeconds) => {
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = timeInSeconds % 60;
+        return `${minutes}m ${seconds}s`;
+    };
+
     if (showLeaderboard) {
         return <Leaderboard username={username} />;
     }
@@ -22,9 +28,8 @@ const GameOverScreen = () => {
         <div className="game-over-container">
             <h1>Game Over</h1>
             <p>Dr. {username}, You treated {numOfAITreated + 1} patients.</p>
-            <p>Total Money Earned: {moneyAtStartOfLevel}</p>
-            <p>Total treatment time: {totalTime}</p>
-            <p>Submit your score to the leaderboard.</p>
+            <p>Total Money Earned: ${moneyAtStartOfLevel}</p>
+            <p>Total treatment time: {formatTime(totalTime)}</p>
             <form onSubmit={handleSubmit}>
                 <button type="submit">Check Leaderboard</button>
             </form>
