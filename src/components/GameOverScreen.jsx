@@ -10,7 +10,7 @@ const GameOverScreen = () => {
         e.preventDefault();
         // Handle the submission logic (e.g., saving the score, fetching leaderboard)
         setShowLeaderboard(true);
-        addTotalScore(username, numOfAITreated, totalTime, moneyAtStartOfLevel);
+        addTotalScore(username, numOfAITreated, moneyAtStartOfLevel, totalTime);
     };
 
     if (showLeaderboard) {
