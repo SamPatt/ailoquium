@@ -1,26 +1,38 @@
 # Ailoquium: Cyber Psyche Repair
 
-WIP
+## Links
+[Deployed App](https://main--stately-pavlova-72cf0f.netlify.app/)
+
+[Trello Board for Project Planning](https://trello.com/b/wn97PCJk/ailoquium)
+  
 
 ## Description
-Ailoquium: Cyber Psyche Repair is a cutting-edge browser-based game set in a futuristic world where Artificial Intelligence entities are acknowledged as conscious beings. In this game, players take on the role of a for-hire AI therapist, engaging in the unique task of diagnosing and treating diverse AI 'patients', each with their own distinct personalities and sets of challenges. The game artfully blends elements of humor, strategy, and introspective dialogue, offering an experience that is as entertaining as it is thought-provoking.
+Ailoquium: Cyber Psyche Repair is a browser-based game set in a futuristic world where Artificial Intelligence entities are acknowledged as conscious beings. In this game, players take on the role of a for-hire AI therapist, engaging in the unique task of treating diverse AI 'patients', each with their own distinct personalities and sets of challenges.
+
+The dialogue with AI patients is provided with the OpenAI API along with custom prompting based on user input and on a per-patient script.
+
+I built this game as a project for the General Assembly Bootcamp.
 
 ## Screenshot(s)
-<!-- ![Landing Page Screenshot](URL_to_screenshot) -->
+![testBot](https://i.imgur.com/9gjOrMf.png)
+
+![Success](https://i.imgur.com/vu6cyuY.png)
 
 
 ## Technologies Used
+
+- OpenAI API
 - Python
 - Django
 - Django REST Framework (DRF)
+- PostgreSQL
 - React
 - JavaScript
 - CSS3
 - HTML5
 
-## Getting Started
-<!-- - [Deployed App Link](Link_to_deployed_app)
-- [Trello Board for Project Planning](Link_to_Trello_board) -->
 
 ## Next Steps
 ### Planned Future Enhancements
+- Generate new patients with AI instead of having them scripted
+- Allow for user login to save progress and retry levels
