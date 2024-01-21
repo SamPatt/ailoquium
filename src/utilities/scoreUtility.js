@@ -2,7 +2,7 @@ const baseURL = "https://ailoquium-e592809f13ab.herokuapp.com/api";
 // Uncomment the next line for local testing
 // const baseURL = "http://localhost:8000/api";
 
-export const addTotalScore = async (username, highestLevel, totalTime, totalMoney) => {
+export const addTotalScore = async (username, highestLevel, totalMoney, totalTime) => {
     try {
         const response = await fetch(`${baseURL}/totalscores/`, {
           method: "POST",
