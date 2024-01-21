@@ -1,0 +1,64 @@
+.highlight {
+    font-weight: bold;
+    color: #4CAF50; /* Choose a color that stands out */
+}
+
+/* Leaderboard.css */
+
+.leaderboard-container {
+    background-color: #121212; /* Dark background */
+    color: #FFF; /* Light text color */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard-container h1, .leaderboard-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leaderboard-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard-container li {
+    background-color: #1E1E1E; /* Slightly lighter dark shade for items */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-container li.highlight {
+    background-color: #4CAF50; /* Highlight color for the current user */
+    color: #000;
+    font-weight: bold;
+}
+
+.leaderboard-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.leaderboard-container button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .leaderboard-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

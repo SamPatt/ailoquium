@@ -1,0 +1,48 @@
+.win-screen {
+    background-color: #121212; /* Dark background */
+    color: #FFF; /* Light text color */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center; /* Center the content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.win-screen h1 {
+    color: #4CAF50; /* A distinct color for the win message */
+    margin-bottom: 20px;
+}
+
+.win-screen p {
+    margin-bottom: 10px;
+    color: #DDD; /* Slightly dimmer color for regular text */
+}
+
+.win-screen button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1em;
+}
+
+.win-screen button:hover {
+    background-color: #0056b3;
+}
+
+.win-screen form {
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .win-screen {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

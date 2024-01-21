@@ -1,6 +1,10 @@
-export const addTotalScore = async (username, highestLevel, totalTime, totalMoney ) => {
+const baseURL = "https://ailoquium-e592809f13ab.herokuapp.com/api";
+// Uncomment the next line for local testing
+// const baseURL = "http://localhost:8000/api";
+
+export const addTotalScore = async (username, highestLevel, totalTime, totalMoney) => {
     try {
-        const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/totalscores/", {
+        const response = await fetch(`${baseURL}/totalscores/`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -12,18 +16,18 @@ export const addTotalScore = async (username, highestLevel, totalTime, totalMone
             total_money: totalMoney,
           }),
         });
-  
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-      } catch (error) {
+    } catch (error) {
         console.error("Error posting a new score:", error);
-      }
-    };
+    }
+};
 
-export const addLevelScore = async (username, level, time ) => {
+export const addLevelScore = async (username, level, time) => {
     try {
-      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/scores/", {
+      const response = await fetch(`${baseURL}/scores/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,11 +45,11 @@ export const addLevelScore = async (username, level, time ) => {
     } catch (error) {
       console.error("Error posting a new score:", error);
     }
-  };
+};
 
 export const fetchScores = async () => {
     try {
-      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/scores/");
+      const response = await fetch(`${baseURL}/scores/`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -53,11 +57,11 @@ export const fetchScores = async () => {
     } catch (error) {
       console.error("Error fetching scores:", error);
     }
-  };
+};
 
 export const fetchTotalScores = async () => {
     try {
-      const response = await fetch("https://ailoquium-e592809f13ab.herokuapp.com/api/totalscores/");
+      const response = await fetch(`${baseURL}/totalscores/`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -65,4 +69,4 @@ export const fetchTotalScores = async () => {
     } catch (error) {
       console.error("Error fetching scores:", error);
     }
-  }
+};

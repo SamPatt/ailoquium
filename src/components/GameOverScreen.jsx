@@ -20,7 +20,7 @@ const GameOverScreen = () => {
     return (
         <div>
             <h1>Game Over</h1>
-            <p>Dr. {username}, You treated {numOfAITreated} patients.</p>
+            <p>Dr. {username}, You treated {numOfAITreated + 1} patients.</p>
             <p>Total Money Earned: {moneyAtStartOfLevel}</p>
             <p>Total treatment time: {totalTime}</p>
             <p>Submit your score to the leaderboard.</p>

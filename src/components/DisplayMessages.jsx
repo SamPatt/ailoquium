@@ -2,7 +2,7 @@ import React from 'react';
 import Message from './Message'; 
 import './DisplayMessages.css';
 
-function DisplayMessages({ messages, secretPhrase }) {
+function DisplayMessages({ messages, secretPhrase, isFetching }) {
     return (
         <div className="messages-container">
             {messages.slice(0).reverse().map((message, index) => (
@@ -13,6 +13,7 @@ function DisplayMessages({ messages, secretPhrase }) {
                     secretPhrase={secretPhrase}
                 />
             ))}
+            {isFetching && <div className="loading-indicator"></div>}
         </div>
     );
 }

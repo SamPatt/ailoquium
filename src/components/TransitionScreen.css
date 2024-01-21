@@ -61,3 +61,37 @@
     font-size: 0.9rem;
     font-style: italic;
 }
+
+.transition-screen {
+    background-color: #121212; /* Dark background for the screen */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.transition-screen h2 {
+    color: #FFF; /* Light text color */
+    margin-bottom: 15px;
+}
+
+.transition-screen p {
+    color: #DDD; /* Slightly dimmer text for paragraphs */
+    margin-bottom: 10px;
+}
+
+.transition-screen button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.transition-screen button:hover {
+    background-color: #0056b3;
+}

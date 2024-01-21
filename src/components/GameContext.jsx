@@ -6,7 +6,7 @@ export const GameProvider = ({ children }) => {
     const [username, setUsername] = useState('');
     const [numOfAITreated, setNumOfAITreated] = useState(0);
     const [moneyAtStartOfLevel, setMoneyAtStartOfLevel] = useState(0);
-    const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(280);
+    const [moneyRemainingFromCurrentJob, setMoneyRemainingFromCurrentJob] = useState(180);
     const [isFirstMessage, setIsFirstMessage] = useState(true);
     const [lastPatientMessage, setLastPatientMessage] = useState({});
     const [isFirstNurseMessage, setIsFirstNurseMessage] = useState(true);
@@ -46,7 +46,7 @@ export const GameProvider = ({ children }) => {
         setUsername(''); // Reset username if needed, or keep it based on game design
         setNumOfAITreated(0);
         setMoneyAtStartOfLevel(0);
-        setMoneyRemainingFromCurrentJob(280); 
+        setMoneyRemainingFromCurrentJob(180); 
         setIsFirstMessage(true);
         setLastPatientMessage({});
         setIsFirstNurseMessage(true);
@@ -64,7 +64,7 @@ export const GameProvider = ({ children }) => {
 
     const nextPatient = () => {
         setTotalTime(currentTime => currentTime + timer);
-        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
+        setMoneyAtStartOfLevel(moneyAtStartOfLevel + moneyRemainingFromCurrentJob);
         setShowTransitionScreen(true); // Show transition screen first
     };
     
@@ -72,8 +72,7 @@ export const GameProvider = ({ children }) => {
         setTimer(0);
         setIsFirstMessage(true);
         setNumOfAITreated(currentNum => currentNum + 1);
-        setMoneyAtStartOfLevel(moneyRemainingFromCurrentJob);
-        setMoneyRemainingFromCurrentJob(280);
+        setMoneyRemainingFromCurrentJob(180);
         setShowTransitionScreen(false); // Hide transition screen after moving to next patient
     };
     

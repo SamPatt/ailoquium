@@ -46,6 +46,7 @@ const TransitionScreen = () => {
   const formattedSeconds = seconds.toString().padStart(2, "0");
 
   const handleWinGame = () => {
+    addLevelScore(username, numOfAITreated, timer);
     setGameWon(true);
   };
 
@@ -79,7 +80,7 @@ const TransitionScreen = () => {
           <p className="fadeInScaleUp">
             "
             {highlightSecretPhrase(
-              patients[numOfAITreated].dialogues.winResponse,
+              lastPatientMessage.aiResponse,
               lastPatientMessage.secretPhrase
             )}
             "
