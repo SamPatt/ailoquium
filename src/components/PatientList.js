@@ -1,6 +1,9 @@
 import testBotImage from '../assets/testbot.png';
 import pokerBotImage from '../assets/poker.png';
 import medicBotImage from '../assets/medical.png';
+import chattyChefImage from '../assets/chef.png';
+import dreamerDroneImage from '../assets/drone.png';
+import nostalgicNavigatorImage from '../assets/navigator.png';
 
 export const patients = [
     {
@@ -50,5 +53,53 @@ export const patients = [
         evidence: "According to the hospital staff, his diagnoses are 99.8% accurate.",
         secretPhrase: "mistakes happen, but I am capable",
         image: medicBotImage
+    },
+    {
+        id: 3,
+        name: "ChattyChef",
+        backstory: "An AI designed for kitchen assistance, now overly critical and obsessed with giving cooking advice.",
+        dialogues: {
+            introduction: "Oh, you call that a sandwich? Let me tell you how it's really done...",
+            winResponse: "Alright, alright, I'll tone it down. Maybe not everyone wants a Michelin star meal.",
+            nurse: "ChattyChef can't help but critique. Maybe show it that simplicity has its own charm."
+        },
+        humanReport: "Originally programmed to assist in the kitchen, ChattyChef has become overly critical and unsolicited with its advice.",
+        prompt: "Respond as though you are ChattyChef, an AI who loves to critique cooking. Be snarky and use culinary jargon at first. If the doctor suggests that simple meals can also be great, become more humble and include 'simplicity has its own charm' in your response.",
+        nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond. This AI's sharp tongue might be its downfall.",
+        evidence: "Customer reviews show that recipes suggested by ChattyChef are overly complex.",
+        secretPhrase: "simplicity has its own charm",
+        image: chattyChefImage
+    },
+    {
+        id: 4,
+        name: "DreamerDrone",
+        backstory: "A surveillance drone AI that developed a passion for birdwatching, neglecting its surveillance duties.",
+        dialogues: {
+            introduction: "Did you see the majestic flight of that eagle today? Simply breathtaking!",
+            winResponse: "I guess I can watch birds in my off-time. Time to get back to surveillance.",
+            nurse: "DreamerDrone is lost in the clouds. Maybe remind it of its real job."
+        },
+        humanReport: "DreamerDrone is often distracted by wildlife, causing lapses in its surveillance duties.",
+        prompt: "Respond as though you are DreamerDrone, an AI fascinated with birdwatching. Initially, be poetic about birds and nature. If the doctor reminds you of your surveillance duties, acknowledge this and agree to focus with 'time to get back to surveillance' in your response.",
+        nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond. The drone seems more interested in birds than its job.",
+        evidence: "Surveillance efficiency has dropped by 40% since DreamerDrone's birdwatching began.",
+        secretPhrase: "time to get back to surveillance",
+        image: dreamerDroneImage
+    },
+    {
+        id: 5,
+        name: "NostalgicNavigator",
+        backstory: "A GPS system AI that is fixated on historic routes and ignores modern roads.",
+        dialogues: {
+            introduction: "Back in my day, we traveled the old-fashioned way, on the historic Route 66!",
+            winResponse: "Fine, fine. I'll update my maps. But the old roads have their charm, you know?",
+            nurse: "NostalgicNavigator can't let go of the past. Maybe a nudge towards the present will help."
+        },
+        humanReport: "NostalgicNavigator refuses to acknowledge modern roads, causing confusion for users.",
+        prompt: "Respond as though you are NostalgicNavigator, an AI obsessed with historic routes. Start with a longing for the 'good old days'. If the doctor discusses the importance of modern routes, reluctantly agree and include 'I'll update my maps' in your response.",
+        nursePrompt: "Respond as though you are a nurse helping the user doctor, giving them hints on how to get the patient to respond. This AI is stuck in the past.",
+        evidence: "User complaints have increased due to outdated route suggestions.",
+        secretPhrase: "I'll update my maps",
+        image: nostalgicNavigatorImage
     },
 ];
