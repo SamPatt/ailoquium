@@ -4,9 +4,13 @@ import { patients } from './PatientList';
 // import './DisplayStatus.css';  // Assuming you have a corresponding CSS file for styling
 
 function DisplayStatus() {
-    const { numOfAITreated, moneyRemainingFromCurrentJob, moneyAtStartOfLevel, timer } = useContext(GameContext);
+    const { numOfAITreated, moneyRemainingFromCurrentJob, moneyAtStartOfLevel, timer, setGameOver } = useContext(GameContext);
     const [showWipeMemoryModal, setShowWipeMemoryModal] = useState(false);
     const [showQuarantineModal, setShowQuarantineModal] = useState(false);
+
+    const handleGameOver = () => {
+        setGameOver(true);
+    };
 
     const handleWipeMemory = () => {
         // Implement the logic for wiping memory
@@ -30,7 +34,7 @@ function DisplayStatus() {
             <h3>Response Desired: <b>{patients[numOfAITreated].secretPhrase}</b></h3>
             <p>Money Remaining: <strong>{moneyRemainingFromCurrentJob}</strong></p>
             <p>Treatment Time: <strong>{formatTime(timer)}</strong></p>
-            
+            <button onClick={handleGameOver}>End Game</button>
             {/* <button onClick={() => setShowWipeMemoryModal(true)}>Wipe Memory</button>
             <button onClick={() => setShowQuarantineModal(true)}>Send to Quarantine</button>
 

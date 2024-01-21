@@ -85,6 +85,7 @@ export const GameProvider = ({ children }) => {
         moneyRemainingFromCurrentJob,
         setMoneyRemainingFromCurrentJob,
         gameOver,
+        setGameOver,
         timer,
         showTransitionScreen,
         nextPatient,
