@@ -3,7 +3,7 @@ import pokerBotImage from '../assets/poker.png';
 import medicBotImage from '../assets/medical.png';
 import chattyChefImage from '../assets/chef.png';
 import dreamerDroneImage from '../assets/drone.png';
-import nostalgicNavigatorImage from '../assets/navigator.png';
+import nostalgicNavigatorImage from '../assets/gps.png';
 
 export const patients = [
     {
